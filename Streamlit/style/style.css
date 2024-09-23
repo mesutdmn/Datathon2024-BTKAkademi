@@ -1,0 +1,24 @@
+body {{
+    background-image: url("data:image/png;base64,{background}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    }}
+
+    p {{
+    color: black;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 20px;
+    
+    }}
+
+    header[data-testid = "stHeader"]{{background: rgba(255,255,255,0);}}
+    button[data-testid = "baseButton-secondary"]{{width: 100%;}}
+    div[data-testid = "stButton"] > button > div > p {{color: white; font-size: 15px;}}
+    div[data-testid = "stApp"]{{background: None; color: black;}}
+    div[data-testid="stTabs"]{{padding: 20px; border-radius: 2rem; background: rgba(255,255,255,0.7);}}
+    div[data-testid = "stMarkdownContainer"] > p {{color: black; font-size: 15px; font-weight: bold;}}
