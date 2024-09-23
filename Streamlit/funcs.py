@@ -1,13 +1,12 @@
 import numpy as np
 import pandas as pd
-import os
 import unicodedata
 from transformers import pipeline
 
 
 pipe = pipeline("text-classification", model="saribasmetehan/bert-base-turkish-sentiment-analysis")
 pd.set_option('future.no_silent_downcasting', True)
-cwd = os.getcwd()
+
 
 
 def get_sentiment(str):
@@ -115,7 +114,7 @@ def feature_engineering_func(data: pd.DataFrame, is_it_test=False) -> pd.DataFra
     data["basari_ivmesi"] = (data["universite_not_ortalamasi"] * 25 - data["lise_mezuniyet_notu"]) / (data["lise_mezuniyet_notu"] + 0.0001)
     
     #Türkiye İstatistik Kurumundan, Şehirlerde çeşitli kategoriler için eğitimlerde harcanan süre ekstra veri olarak eklendi.
-    egitim_suresi = pd.read_csv(cwd + "/data/egitim_ortalama_train.csv")
+    egitim_suresi = pd.read_csv( "Streamlit/data/egitim_ortalama_train.csv")
     data = pd.merge(data, egitim_suresi, how="left", on="ikametgah_sehri")
     
     if data["girisim_metni_uzunlugu"].loc[0]=="cok":
