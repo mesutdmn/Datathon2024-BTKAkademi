@@ -9,10 +9,11 @@ This repository contains a notebook about Datathon24 competition in Turkey.
 - **Modeling**: Involves building and training different machine learning models.
 - **Prediction**: Contains the predictions made using the trained models and the evaluation of the results.
 - **Extra**: This section includes the links and descriptions of external data sources used in the project.
+- **Kaggle**: https://www.kaggle.com/code/dumanmesut/we-bears-datathon-2024-rank-5-private-5-7
 
 ### Streamlit Demo
 - **Demo**: Streamlit folder contains app files.
-- Live app: https://datathon24.streamlit.app/
+- **Live app**: https://datathon24.streamlit.app/
 
 
 
