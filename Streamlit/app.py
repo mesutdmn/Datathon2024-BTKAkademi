@@ -4,14 +4,12 @@ import base64
 import funcs
 import pandas as pd
 import numpy as np
-import os
 st.set_page_config(layout="centered",page_title="Girişimcilik Değerlendirme Formu", page_icon=":dart:")
 
-cwd = os.getcwd()
 
 @st.cache_data
 def read_columns():
-    return pd.read_csv(cwd+"/data/unique_columns.csv")
+    return pd.read_csv("Streamlit/data/unique_columns.csv")
 
 @st.cache_resource
 def load_cat_models():
@@ -19,7 +17,7 @@ def load_cat_models():
     for i in range(20):
         model_path = f"catboost_model_{i}.cbm"
         model = CatBoostRegressor()
-        model.load_model(cwd+"/models/" + model_path)
+        model.load_model("Streamlit/models/" + model_path)
         loaded_models.append(model)
     return loaded_models
 
@@ -28,9 +26,9 @@ def get_base64(bin_file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-background = get_base64(cwd + "/media/background.jpg")
+background = get_base64("Streamlit/media/background.jpg")
 
-with open(cwd + "/style/style.css", "r") as style:
+with open("Streamlit/style/style.css", "r") as style:
     css=f"""<style>{style.read().format(background=background)}</style>"""
     st.markdown(css, unsafe_allow_html=True)
 
